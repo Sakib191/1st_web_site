@@ -42,36 +42,72 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
                     <div class="tab-titles">
-                        <p class="tab-links active-link"> Skills</p>
-                        <p class="tab-links"> Experiance</p>
-                        <p class="tab-links"> Education</p>
+                        <p class="tab-links active-link" onclick="opentab('skills')"> Skills</p>
+                        <p class="tab-links" onclick="opentab('experiance')"> Experiance</p>
+                        <p class="tab-links" onclick="opentab('education')"> Education</p>
+                        <p class="tab-links" onclick="opentab('courses')">Courses</p>
                     </div>
-                    <div class="tab-contents">
+                    <div class="tab-contents active-tab" id="skills">
                         <ul>
                             <li><span>Web Design</span> <br> Design Web/App interface</li>
                             <li><span>Networking</span> <br> Design Network Infrastructer</li>
                             <li><span>Server Management</span> <br> Configure and Manage any kind of Servers</li>
+                        </ul> 
+                    </div>
+                    <div class="tab-contents" id="experiance">
+                        <ul>
+                            <li><span>Web Design</span> <br> Four months experiance on web design using HTML, CSS, Bostrap and Java Script.</li>
+                            <li><span>Networking</span> <br> Eight month of practical experiance on networking sector. I completet CCNA & Professional Networking Course also.</li>
+                            <li><span>Server Management</span> <br> Four months experiance as an Intern at Anwar group, Where i have to Configure and Manage sevaral kind of Servers</li>
                         </ul>
                     </div>
-                    <div class="tab-contents">
+                    <div class="tab-contents" id="education">
                         <ul>
-                            <li><span>Web Design</span> <br> Design Web/App interface</li>
+                            <li><span>Under Graduate</span> <br> I complete my BSc at </li>
                             <li><span>Networking</span> <br> Design Network Infrastructer</li>
                             <li><span>Server Management</span> <br> Configure and Manage any kind of Servers</li>
                         </ul>
                     </div>
-                    <div class="tab-contents">
+                    <div class="tab-contents" id="courses">
                         <ul>
-                            <li><span>Web Design</span> <br> Design Web/App interface</li>
-                            <li><span>Networking</span> <br> Design Network Infrastructer</li>
-                            <li><span>Server Management</span> <br> Configure and Manage any kind of Servers</li>
+                            <li><span>CCNA</span> <br> I complete my CCNA course at February 2023.</li>
+                            <li><span>Web Development</span> <br> I am carring out Web Development course from February 2023 at Programming Hero.</li>
+                            <li><span>Professional Networking Course</span> <br> I completet Professional Networking Course at March 2023 from IUBAT.</li>
+                            <li><span>CyberOps</span> <br> I am carring out CyberOps course from March 2023</li>
+                            <li><span>Cyber Security</span> <br> I am carring out Cyber Security course from Frbruary 2023 at EC-Concil.</li>
                         </ul>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
     </div>
+
+
+
+
+
+        <script>    
+
+
+
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+
+            function opentab(tabname){
+                for(tablink of tablinks){
+                    tablink.classList.remove("active-links");
+                }
+                for(tabcontent of tabcontents){
+                    tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+            }
+
+
+        </script>
+
 
 </body>
 </html>
